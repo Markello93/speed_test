@@ -107,7 +107,7 @@ def download_once(url: str, timeout: float, chunk_size: int) -> RequestResult:
 
 
 def run_requests(url: str, count: int, timeout: float, chunk_size: int) -> list[RequestResult]:
-    """Выполняет count последовательных загрузок; скипает пропускает, не прерывая серию."""
+    """Выполняет count последовательных загрузок; скипает, не прерывая серию."""
     results: list[RequestResult] = []
     for attempt in range(1, count + 1):
         logger.debug("Запрос %d/%d: GET %s", attempt, count, url)
